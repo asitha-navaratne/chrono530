@@ -69,6 +69,19 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.clock-body__time {
+  border: 1px dashed black;
+  padding: 1px 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #202020;
+}
+
 .time-input-section {
   margin-top: 20px;
   display: flex;
