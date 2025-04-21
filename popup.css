@@ -39,7 +39,7 @@ body {
   top: 50%;
   left: 50%;
   transform-origin: left;
-  transform: translate(0%, -50%) rotate(180deg);
+  transform: translate(0%, -50%) rotate(270deg);
   height: 5px;
   width: 30px;
   border-radius: 10px;
