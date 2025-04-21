@@ -11,6 +11,10 @@ body {
   align-items: center;
 }
 
+.title {
+  font-weight: 700;
+}
+
 .clock {
   margin-top: 15px;
   background-color: #ff5757;
@@ -23,13 +27,46 @@ body {
 }
 
 .clock-body {
+  position: relative;
   background-color: #d9d9d9;
   height: 135px;
   width: 135px;
   border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.clock-body__hour-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: translate(0%, -50%) rotate(180deg);
+  height: 5px;
+  width: 30px;
+  border-radius: 10px;
+  background-color: #314d3e;
+}
+
+.clock-body__minute-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: translate(0%, -50%) rotate(90deg);
+  height: 2px;
+  width: 55px;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.clock-body__center {
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: #ff5757;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .time-input-section {
@@ -48,7 +85,7 @@ body {
 
 .time-input-section__button {
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 10px;
   background-color: #ff5757;
   color: white;
 }
