@@ -1,0 +1,14 @@
+{
+  "name": "Chrono530",
+  "version": "1.0",
+  "description": "Converts between UK and SL time",
+  "action": {
+    "default_title": "Chrono530",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "assets/logo48.png",
+      "128": "assets/logo128.png"
+    }
+  },
+  "manifest_version": 3
+}

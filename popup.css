@@ -1,0 +1,61 @@
+body {
+  color: #314d3e;
+}
+
+.container {
+  height: 300px;
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock {
+  margin-top: 15px;
+  background-color: #ff5757;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock-body {
+  background-color: #d9d9d9;
+  height: 135px;
+  width: 135px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-input-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-input-section__input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.time-input-section__button {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ff5757;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #202020;
+    color: white;
+  }
+}
