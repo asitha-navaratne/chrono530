@@ -1,5 +1,7 @@
 let localTime = new Date();
-document.querySelector(".time-input-section").addEventListener("submit", handleTimeInputSubmit);
+document
+  .querySelector(".time-input-section")
+  .addEventListener("submit", handleTimeInputSubmit);
 
 function initialize() {
   const hours = String(localTime.getHours()).padStart(2, "0");
@@ -22,7 +24,7 @@ function setUkTime() {
   const ukTime = localTime.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hour12: true,
     timeZone: "Europe/London",
   });
 
@@ -30,8 +32,8 @@ function setUkTime() {
 
   const [ukHour, ukMinutes] = ukTime.split(":");
 
-  const hourDegrees = ukHour * 30 + 270 + ukMinutes * 0.5;
-  const minuteDegrees = ukMinutes * 6 + 270;
+  const hourDegrees = ukHour * 30 + 270 + ukMinutes.split(" ")[0] * 0.5;
+  const minuteDegrees = ukMinutes.split(" ")[0] * 6 + 270;
 
   document.querySelector(
     ".clock-body__hour-hand"

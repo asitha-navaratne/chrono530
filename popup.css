@@ -70,10 +70,13 @@ body {
 }
 
 .clock-body__digital-time {
+  display: flex;
+  justify-content: center;
   border: 1px dashed black;
   padding: 1px 5px;
+  width: 70px;
   font-family: "Courier New", Courier, monospace;
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   position: absolute;
   top: 75%;
