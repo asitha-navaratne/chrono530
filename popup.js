@@ -1,4 +1,5 @@
 let localTime = new Date();
+document.querySelector(".time-input-section").addEventListener("submit", handleTimeInputSubmit);
 
 function initialize() {
   const hours = String(localTime.getHours()).padStart(2, "0");
@@ -8,7 +9,13 @@ function initialize() {
 
   document.querySelector(".time-input-section__input").value = timeString;
 
-  setUkTime()
+  setUkTime();
+}
+
+function updateTime() {
+  localTime = new Date();
+
+  setUkTime();
 }
 
 function setUkTime() {
@@ -34,12 +41,19 @@ function setUkTime() {
   ).style.transform = `rotate(${minuteDegrees}deg)`;
 }
 
-function updateTime() {
-  localTime = new Date()
+function handleTimeInputSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const timeValue = form.querySelector(".time-input-section__input").value;
 
-  setUkTime()
+  const [newHours, newMinutes] = timeValue.split(":");
+
+  localTime = new Date(`1970-01-01T${newHours}:${newMinutes}:00`);
+
+  setUkTime();
+  clearInterval(interval);
 }
 
 initialize();
 
-setInterval(updateTime, 1000);
+const interval = setInterval(updateTime, 1000);
