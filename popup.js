@@ -1,6 +1,17 @@
-const localTime = new Date();
+let localTime = new Date();
 
-function setInitialUkTimes() {
+function initialize() {
+  const hours = String(localTime.getHours()).padStart(2, "0");
+  const minutes = String(localTime.getMinutes()).padStart(2, "0");
+
+  const timeString = `${hours}:${minutes}`;
+
+  document.querySelector(".time-input-section__input").value = timeString;
+
+  setUkTime()
+}
+
+function setUkTime() {
   const ukTime = localTime.toLocaleTimeString("en-GB", {
     hour: "2-digit",
     minute: "2-digit",
@@ -8,7 +19,7 @@ function setInitialUkTimes() {
     timeZone: "Europe/London",
   });
 
-  document.querySelector(".clock-body__time").innerHTML = ukTime;
+  document.querySelector(".clock-body__digital-time").innerHTML = ukTime;
 
   const [ukHour, ukMinutes] = ukTime.split(":");
 
@@ -23,16 +34,12 @@ function setInitialUkTimes() {
   ).style.transform = `rotate(${minuteDegrees}deg)`;
 }
 
-function setInitialTimeInputValue() {
-  const hours = String(localTime.getHours()).padStart(2, "0");
-  const minutes = String(localTime.getMinutes()).padStart(2, "0");
+function updateTime() {
+  localTime = new Date()
 
-  const timeString = `${hours}:${minutes}`;
-
-  document.querySelector(".time-input-section__input").value = timeString;
+  setUkTime()
 }
 
-setInitialUkTimes();
-setInitialTimeInputValue();
+initialize();
 
-setInterval(setInitialUkTimes, 1000);
+setInterval(updateTime, 1000);

@@ -69,7 +69,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.clock-body__time {
+.clock-body__digital-time {
   border: 1px dashed black;
   padding: 1px 5px;
   font-family: "Courier New", Courier, monospace;
