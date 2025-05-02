@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="title">Current time in UK</div>
+      <span class="title">Current time in UK</span>
       <div class="clock">
         <div class="clock-body">
           <div class="clock-body__hour-hand"></div>
@@ -18,13 +18,28 @@
         </div>
       </div>
       <div class="time-input-section">
-        <div>Enter a time in SL</div>
-        <input type="time" class="time-input-section__input" />
-        <div>
-          <button type="submit" class="time-input-section__convert-button">
-            Convert
-          </button>
-          <button class="time-input-section__reset-button">Reset</button>
+        <div class="time-input-section__locale-selection">
+          <span>Select Location</span>
+          <div class="locale-selection__input-section">
+            <label>
+              <input type="radio" name="locale" value="sl" checked />
+              Sri Lanka
+            </label>
+            <label>
+              <input type="radio" name="locale" value="uk" />
+              UK
+            </label>
+          </div>
+        </div>
+        <div class="time-input-section__time-section">
+          <span>Enter a time in SL</span>
+          <input type="time" class="time-input-section__input" />
+          <div>
+            <button type="submit" class="time-input-section__convert-button">
+              Convert
+            </button>
+            <button class="time-input-section__reset-button">Reset</button>
+          </div>
         </div>
       </div>
     </div>
