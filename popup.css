@@ -3,12 +3,13 @@ body {
 }
 
 .container {
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 350px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .title {
@@ -24,6 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .clock-body {
@@ -93,6 +95,9 @@ body {
 
 .time-input-section__locale-selection {
   margin-right: 20px;
+  border: 1px dashed #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .locale-selection__input-section {
