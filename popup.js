@@ -83,13 +83,7 @@ function setUkTime() {
 
   digitalTime.innerHTML = ukTime;
 
-  const [ukHour, ukMinutes] = ukTime.split(":");
-
-  const hourDegrees = ukHour * 30 + 270 + ukMinutes.split(" ")[0] * 0.5;
-  const minuteDegrees = ukMinutes.split(" ")[0] * 6 + 270;
-
-  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
-  minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+  setClock(ukTime);
 }
 
 function setSlTime() {
@@ -101,10 +95,14 @@ function setSlTime() {
 
   digitalTime.innerHTML = slTime;
 
-  const [slHour, slMinutes] = slTime.split(":");
+  setClock(slTime);
+}
 
-  const hourDegrees = slHour * 30 + 270 + slMinutes.split(" ")[0] * 0.5;
-  const minuteDegrees = slMinutes.split(" ")[0] * 6 + 270;
+function setClock(timeString) {
+  const [hour, minutes] = timeString.split(":");
+
+  const hourDegrees = hour * 30 + 270 + minutes.split(" ")[0] * 0.5;
+  const minuteDegrees = minutes.split(" ")[0] * 6 + 270;
 
   hourHand.style.transform = `rotate(${hourDegrees}deg)`;
   minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
